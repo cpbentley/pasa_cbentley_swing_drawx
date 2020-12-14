@@ -1,5 +1,6 @@
 package pasa.cbentley.draw.layout.swing.demo;
 
+import pasa.cbentley.core.swing.ctx.SwingCoreCtx;
 import pasa.cbentley.draw.layout.swing.ctx.SwingDrawerCtx;
 import pasa.cbentley.framework.coredraw.swing.ctx.CoreDrawSwingCtx;
 import pasa.cbentley.framework.drawx.src4.ctx.DrwCtx;
@@ -29,8 +30,9 @@ public abstract class RunSwingDrawerAbstract extends RunLayouterDemoSwingAbstrac
 
    public RunSwingDrawerAbstract() {
       super(new SwingLayouterCtx());
-
-      dsc = new CoreDrawSwingCtx(boc);
+      
+      SwingCoreCtx scc = new SwingCoreCtx(c5);
+      dsc = new CoreDrawSwingCtx(scc, boc);
       dc = new DrwCtx(dsc, slc);
 
       sdc = new SwingDrawerCtx(dc, dsc, slc);

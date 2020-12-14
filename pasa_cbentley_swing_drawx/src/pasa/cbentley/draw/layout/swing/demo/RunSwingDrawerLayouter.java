@@ -98,7 +98,7 @@ public class RunSwingDrawerLayouter extends RunSwingDrawerAbstract {
 
       ByteObject gradientTrig = dc.getGradientFactory().getGradient(color2, 100, ITechGradient.GRADIENT_TYPE_TRIG_08_NORMAL);
 
-      ByteObject figTriangle = dc.getFigureFactory().getFigTriangleType(color1, C.TYPE_00TOP, gradientTrig);
+      ByteObject figTriangle = dc.getFigureFactory().getFigTriangleType(color1, C.TYPE_00_TOP, gradientTrig);
 
       triangle.setFigure(figTriangle);
 

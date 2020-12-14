@@ -8,6 +8,7 @@ import javax.swing.JComponent;
 
 import pasa.cbentley.draw.layout.swing.ctx.SwingDrawerCtx;
 import pasa.cbentley.framework.coredraw.src4.interfaces.IGraphics;
+import pasa.cbentley.framework.coredraw.src4.interfaces.ITechGraphics;
 import pasa.cbentley.framework.coredraw.swing.engine.GraphicsSwing;
 import pasa.cbentley.framework.drawx.src4.engine.GraphicsX;
 import pasa.cbentley.layouter.swing.engine.JComponentLayoutable;
@@ -63,7 +64,7 @@ public abstract class JComponentDrawXAbstract extends JComponentLayoutable {
       g.setClip(0, 0, getWidth(), getHeight());
       g.setColor(0xff000000); // black
       g.setFont(ssd.getCoreDrawCtx().getFontFactory().getDefaultFont());
-      g.setStrokeStyle(IGraphics.SOLID);
+      g.setStrokeStyle(ITechGraphics.SOLID);
 
       //we need an object with Graphi
       paint(gx);
