@@ -30,13 +30,13 @@ import pasa.cbentley.layouter.swing.engine.JPanelLayoutable;
  * @author Charles Bentley
  *
  */
-public class RunSwingDrawerLayouter extends RunSwingDrawerAbstract {
+public class RunSwingDrawerCards extends RunSwingDrawerAbstract {
 
-   public RunSwingDrawerLayouter() {
+   public RunSwingDrawerCards() {
       
    }
    public static void main(String[] args) throws IOException {
-      RunSwingDrawerLayouter run = new RunSwingDrawerLayouter();
+      RunSwingDrawerCards run = new RunSwingDrawerCards();
       run.run();
    }
 
@@ -52,8 +52,9 @@ public class RunSwingDrawerLayouter extends RunSwingDrawerAbstract {
       ByteObject pozerX = pozerFac.getPozerCenterToCenter();
       ByteObject pozerY = pozerFac.getPozerCenterToCenter();
       ByteObject pozerEndCenter = pozerFac.getPozerEndToCenter();
-      ByteObject pozerXRightToRight = pozerFac.getPozerBottomRight();
+      ByteObject pozerXRightToRight = pozerFac.getPozerRightToRight();
       ByteObject pozerTopToTop = pozerFac.getPozerTopToTop();
+      
       ByteObject pozerCenterToTop = pozerFac.getPozerCenterToTopLeft();
       ByteObject pozerCenterToRight = pozerFac.getPozerCenterToBotRight();
       ByteObject pozerYTop = pozerFac.getPozerTopLeft();
@@ -66,81 +67,76 @@ public class RunSwingDrawerLayouter extends RunSwingDrawerAbstract {
 
       int color1 = ColorUtils.getRGBInt(140, 180, 40);
       int color2 = ColorUtils.getRGBInt(040, 180, 240);
+      
+      int colorBlack = ColorUtils.getRGBInt(040, 00, 040);
+      int colorRed = ColorUtils.getRGBInt(240, 00, 040);
+      
       ByteObject gradient = dc.getGradientFactory().getGradient(color2, 100, ITechGradient.GRADIENT_TYPE_RECT_00_SQUARE);
 
-      ByteObject figBorder = dc.getFigureFactory().getFigBorder(5, color2);
-      //arcs can be sizers
-      ByteObject figRect = dc.getFigureFactory().getFigRect(color1, 10, 10, gradient);
 
-      //figure box context module registered
-      //#debug
-      uc.toDLog().pTest("Green Figure", figBorder, RunSwingDrawerLayouter.class, "main", uc.LVL_05_FINE, true);
+      JComponentDrawXFigure trefle = new JComponentDrawXFigure(sdc);
+      trefle.setName("trefle");
+      trefle.setSizer(sizerW, sizer10);
+      trefle.setPozer(pozerXRightToRight, pozerTopToTop);
 
-      JComponentDrawXFigure green = new JComponentDrawXFigure(sdc);
-      green.setName("green");
-      green.setSizer(sizerW, sizerH);
-      green.setPozer(pozerX, pozerY);
-      green.setFigure(figRect);
+      ByteObject figRect = dc.getFigureFactory().getFigRect(colorBlack, 10, 10, gradient);
+      trefle.setFigure(figRect);
 
-      JComponentDrawXFigure border = new JComponentDrawXFigure(sdc);
-      border.setName("border");
-      border.setSizer(sizerW, sizer10);
-      border.setPozer(pozerX, pozerTopToTop);
-      border.setFigure(figBorder);
-
-      JComponentDrawXFigure triangle = new JComponentDrawXFigure(sdc);
-      triangle.setName("triangle");
-      triangle.setSizer(sizerW, sizer30);
-      triangle.setPozer(pozerFac.getPozerStartToStart(), pozerFac.getPozerBotToBot());
+      
+      JComponentDrawXFigure pique = new JComponentDrawXFigure(sdc);
+      pique.setName("pique");
+      pique.setSizer(sizerW, sizer30);
+      
+      pique.setPozer(pozerFac.getPozerStartToStart(), pozerFac.getPozerBotToBot());
 
       ByteObject gradientTrig = dc.getGradientFactory().getGradient(color2, 100, ITechGradient.GRADIENT_TYPE_TRIG_08_NORMAL);
+      ByteObject figTriangle = dc.getFigureFactory().getFigTriangleType(colorRed, C.TYPE_00_TOP, gradientTrig);
 
-      ByteObject figTriangle = dc.getFigureFactory().getFigTriangleType(color1, C.TYPE_00_TOP, gradientTrig);
+      pique.setFigure(figTriangle);
 
-      triangle.setFigure(figTriangle);
-
-      JComponentDrawXFigure ellipse = new JComponentDrawXFigure(sdc);
-      ellipse.setName("ellipse");
-      ellipse.setSizer(sizerW, sizer30);
-      ellipse.setPozer(pozerFac.getPozerEndToEnd(), pozerFac.getPozerBotToBot());
-      ByteObject gradientEllipse = dc.getGradientFactory().getGradient(color2, 100, ITechGradient.GRADIENT_TYPE_ELLIPSE_00_NORMAL);
+      
+      JComponentDrawXFigure coeur = new JComponentDrawXFigure(sdc);
+      coeur.setName("coeur");
+      coeur.setSizer(sizerW, sizer30);
+      coeur.setPozer(pozerFac.getPozerEndToEnd(), pozerFac.getPozerBotToBot());
+      ByteObject gradientEllipse = dc.getGradientFactory().getGradient(colorRed, 100, ITechGradient.GRADIENT_TYPE_ELLIPSE_00_NORMAL);
       ByteObject figEllipse = dc.getFigureFactory().getFigEllipse(color1, gradientEllipse);
-      ellipse.setFigure(figEllipse);
+      coeur.setFigure(figEllipse);
 
-      MouseListenerAlias mouseAliasEllipse = new MouseListenerAlias(sdc, ellipse);
-      ellipse.addMouseListener(mouseAliasEllipse);
+      MouseListenerAlias mouseAliasEllipse = new MouseListenerAlias(sdc, coeur);
+      coeur.addMouseListener(mouseAliasEllipse);
 
-      JComponentDrawXFigure losange = new JComponentDrawXFigure(sdc);
-      losange.setName("losange");
-      losange.setSizer(sizerW, sizer30);
-      losange.setPozer(pozerFac.getPozerStartToStart(), pozerFac.getPozerTopToTop());
+      JComponentDrawXFigure carreau = new JComponentDrawXFigure(sdc);
+      carreau.setName("carreau");
+      carreau.setSizer(sizerW, sizer30);
+      //use a pozer Factory create them. Not very elegant
+      carreau.setPozer(pozerFac.getPozerStartToStart(), pozerFac.getPozerTopToTop());
       ByteObject gradientLosange = dc.getGradientFactory().getGradient(color2, 100, ITechGradient.GRADIENT_TYPE_LOSANGE_2_FULLHORIZ);
       int overstep = 0;
       boolean isHoriz = false;
       boolean isPap = false;
       boolean isCountour = false;
       ByteObject figLosange = dc.getFigureFactory().getFigLosange(color1, overstep, isHoriz, isPap, isCountour, gradientLosange);
-      losange.setFigure(figLosange);
+      carreau.setFigure(figLosange);
 
-      MouseListenerAlias mouseAliasLosange = new MouseListenerAlias(sdc, losange);
-      losange.addMouseListener(mouseAliasLosange);
+      MouseListenerAlias mouseAliasLosange = new MouseListenerAlias(sdc, carreau);
+      carreau.addMouseListener(mouseAliasLosange);
 
-      JComponentDrawXFigure hello = new JComponentDrawXFigure(sdc);
-      hello.setName("hello");
-      hello.setSizer(sizerW, sizer30);
-      hello.setPozer(pozerFac.getPozerEndToEnd(), pozerFac.getPozerTopToTop());
+      JComponentDrawXFigure numbers = new JComponentDrawXFigure(sdc);
+      numbers.setName("numbers");
+      numbers.setSizer(sizerW, sizer30);
+      numbers.setPozer(pozerFac.getPozerCenterToCenter(), pozerFac.getPozerCenterToCenter());
       int face = ITechFont.FACE_MONOSPACE;
       int style = ITechFont.STYLE_BOLD;
-      int size = ITechFont.SIZE_3_MEDIUM;
-      ByteObject figHello = dc.getFigureFactory().getFigString("Hello!", face, style, size, color1);
-      hello.setFigure(figHello);
+      int size = ITechFont.SIZE_5_HUGE;
+      ByteObject figHello = dc.getFigureFactory().getFigString("1 2 3 4 5 6 7 8 9 0", face, style, size, color1);
+      numbers.setFigure(figHello);
 
-      panel.addLayoutableOnTop(green);
-      panel.addLayoutableOnTop(border);
-      panel.addLayoutableOnTop(triangle);
-      panel.addLayoutableOnTop(ellipse);
-      panel.addLayoutableOnTop(losange);
-      panel.addLayoutableOnTop(hello);
+      panel.addLayoutableOnTop(trefle);
+      panel.addLayoutableOnTop(pique);
+      panel.addLayoutableOnTop(coeur);
+      panel.addLayoutableOnTop(carreau);
+      panel.addLayoutableOnTop(numbers);
 
       JMenuBar menuBar = new JMenuBar();
       JMenu menu = new JMenu("Actions");
@@ -178,7 +174,7 @@ public class RunSwingDrawerLayouter extends RunSwingDrawerAbstract {
       slc.toStringSetDebugBreaks(new LayoutWillListenerAdapter() {
 
          public void layoutWillComputePositions(ILayoutable layoutable) {
-            if (layoutable == green) {
+            if (layoutable == carreau) {
                isBreak = true;
             }
          }
@@ -196,13 +192,13 @@ public class RunSwingDrawerLayouter extends RunSwingDrawerAbstract {
          }
 
          public void layoutWillComputeSizes(ILayoutable layoutable) {
-            if (layoutable == green) {
+            if (layoutable == carreau) {
                isBreak = true;
             }
          }
 
          public void layoutWillComputeSizeW(ILayoutable layoutable) {
-            if (layoutable == green) {
+            if (layoutable == carreau) {
                isBreak = true;
             }
          }
