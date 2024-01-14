@@ -9,13 +9,13 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
 import pasa.cbentley.byteobjects.src4.core.ByteObject;
+import pasa.cbentley.byteobjects.src4.objects.color.ITechGradient;
 import pasa.cbentley.core.src4.interfaces.C;
 import pasa.cbentley.core.src4.utils.ColorUtils;
 import pasa.cbentley.draw.layout.swing.ctx.SwingDrawerCtx;
 import pasa.cbentley.draw.layout.swing.engine.JComponentDrawXFigure;
 import pasa.cbentley.draw.layout.swing.engine.MouseListenerAlias;
 import pasa.cbentley.framework.coredraw.src4.interfaces.ITechFont;
-import pasa.cbentley.framework.drawx.src4.tech.ITechGradient;
 import pasa.cbentley.layouter.src4.engine.LayoutWillListenerAdapter;
 import pasa.cbentley.layouter.src4.engine.PozerFactory;
 import pasa.cbentley.layouter.src4.engine.Zer2DPozer;
