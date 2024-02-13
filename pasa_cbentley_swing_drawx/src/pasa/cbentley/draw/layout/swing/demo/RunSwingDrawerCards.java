@@ -44,10 +44,10 @@ public class RunSwingDrawerCards extends RunSwingDrawerAbstract {
    public void buildDemo(JPanelLayoutable panels) {
       ConfiguratorForSwing panel = panels.getConfigurator();
 
-      ByteObject sizerW = slc.getSizerFactory().getSizerRatio100(ITechLayout.ETALON_4_PARENT, 30);
-      ByteObject sizerH = slc.getSizerFactory().getSizerRatio100(ITechLayout.ETALON_4_PARENT, 40);
-      ByteObject sizer10 = slc.getSizerFactory().getSizerRatio100(ITechLayout.ETALON_4_PARENT, 10);
-      ByteObject sizer30 = slc.getSizerFactory().getSizerRatio100(ITechLayout.ETALON_4_PARENT, 30);
+      ByteObject sizerW = slc.getSizerFactory().getSizerRatio100(30, ITechLayout.ETALON_4_PARENT);
+      ByteObject sizerH = slc.getSizerFactory().getSizerRatio100(40, ITechLayout.ETALON_4_PARENT);
+      ByteObject sizer10 = slc.getSizerFactory().getSizerRatio100(10, ITechLayout.ETALON_4_PARENT);
+      ByteObject sizer30 = slc.getSizerFactory().getSizerRatio100(30, ITechLayout.ETALON_4_PARENT);
       PozerFactory pozerFac = slc.getFactoryPozer();
       ByteObject pozerX = pozerFac.getPozerCenterToCenter();
       ByteObject pozerY = pozerFac.getPozerCenterToCenter();
@@ -61,9 +61,9 @@ public class RunSwingDrawerCards extends RunSwingDrawerAbstract {
       Zer2DPozer top2TopRight2RightParent = new Zer2DPozer(slc, pozerXRightToRight, pozerTopToTop);
       Zer2DPozer centerRightParent = new Zer2DPozer(slc, pozerXRightToRight, pozerYTop);
       Zer2DPozer pozerEndToCenterTopToTopParent = new Zer2DPozer(slc, pozerEndCenter, pozerTopToTop);
-      ByteObject sizer40 = slc.getSizerFactory().getSizerPix(40);
-      ByteObject sizer60 = slc.getSizerFactory().getSizerPix(60);
-      ByteObject sizerRatio50 = slc.getSizerFactory().getSizerRatio100(ITechLayout.ETALON_4_PARENT, 50);
+      ByteObject sizer40 = slc.getSizerFactory().getSizerPixel(40);
+      ByteObject sizer60 = slc.getSizerFactory().getSizerPixel(60);
+      ByteObject sizerRatio50 = slc.getSizerFactory().getSizerRatio100(50, ITechLayout.ETALON_4_PARENT);
 
       int color1 = ColorUtils.getRGBInt(140, 180, 40);
       int color2 = ColorUtils.getRGBInt(040, 180, 240);
