@@ -26,7 +26,7 @@ public class SwingDrawerCtx extends ACtx {
    protected final SwingLayouterCtx slc;
 
    public SwingDrawerCtx(DrwCtx drc, CoreDrawSwingCtx dsc, SwingLayouterCtx slc) {
-      super(drc.getUCtx());
+      super(drc.getUC());
       this.drc = drc;
       this.dsc = dsc;
       this.slc = slc;
