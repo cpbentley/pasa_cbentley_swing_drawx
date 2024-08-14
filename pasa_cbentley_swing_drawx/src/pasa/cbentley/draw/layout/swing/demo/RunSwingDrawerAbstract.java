@@ -2,7 +2,7 @@ package pasa.cbentley.draw.layout.swing.demo;
 
 import pasa.cbentley.core.swing.ctx.SwingCoreCtx;
 import pasa.cbentley.draw.layout.swing.ctx.SwingDrawerCtx;
-import pasa.cbentley.framework.coredraw.swing.ctx.CoreDrawSwingCtx;
+import pasa.cbentley.framework.core.draw.swing.ctx.CoreDrawSwingCtx;
 import pasa.cbentley.framework.drawx.src4.ctx.DrwCtx;
 import pasa.cbentley.layouter.swing.ctx.SwingLayouterCtx;
 import pasa.cbentley.layouter.swing.demo.RunLayouterDemoSwingAbstract;

@@ -7,9 +7,9 @@ import java.awt.Graphics2D;
 import javax.swing.JComponent;
 
 import pasa.cbentley.draw.layout.swing.ctx.SwingDrawerCtx;
+import pasa.cbentley.framework.core.draw.swing.engine.GraphicsSwing;
 import pasa.cbentley.framework.coredraw.src4.interfaces.IGraphics;
 import pasa.cbentley.framework.coredraw.src4.interfaces.ITechGraphics;
-import pasa.cbentley.framework.coredraw.swing.engine.GraphicsSwing;
 import pasa.cbentley.framework.drawx.src4.engine.GraphicsX;
 import pasa.cbentley.layouter.swing.engine.JComponentLayoutable;
 

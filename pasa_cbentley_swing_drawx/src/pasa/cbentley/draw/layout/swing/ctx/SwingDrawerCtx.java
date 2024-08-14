@@ -2,8 +2,8 @@ package pasa.cbentley.draw.layout.swing.ctx;
 
 import pasa.cbentley.core.src4.ctx.ACtx;
 import pasa.cbentley.draw.layout.swing.engine.JComponentDrawXFigure;
+import pasa.cbentley.framework.core.draw.swing.ctx.CoreDrawSwingCtx;
 import pasa.cbentley.framework.coredraw.src4.ctx.CoreDrawCtx;
-import pasa.cbentley.framework.coredraw.swing.ctx.CoreDrawSwingCtx;
 import pasa.cbentley.framework.drawx.src4.ctx.DrwCtx;
 import pasa.cbentley.framework.drawx.src4.engine.GraphicsX;
 import pasa.cbentley.layouter.src4.ctx.LayouterCtx;
