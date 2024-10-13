@@ -126,8 +126,8 @@ public class RunSwingDrawerCards extends RunSwingDrawerAbstract {
       numbers.setName("numbers");
       numbers.setSizer(sizerW, sizer30);
       numbers.setPozer(pozerFac.getPozerCenterToCenter(), pozerFac.getPozerCenterToCenter());
-      int face = ITechFont.FACE_MONOSPACE;
-      int style = ITechFont.STYLE_BOLD;
+      int face = ITechFont.FACE_01_MONOSPACE;
+      int style = ITechFont.STYLE_1_BOLD;
       int size = ITechFont.SIZE_5_HUGE;
       ByteObject figHello = dc.getFigureFactory().getFigString("1 2 3 4 5 6 7 8 9 0", face, style, size, color1);
       numbers.setFigure(figHello);

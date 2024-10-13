@@ -25,7 +25,7 @@ public abstract class RunSwingDrawerAbstract extends RunLayouterDemoSwingAbstrac
    public RunSwingDrawerAbstract() {
       super(new SwingLayouterCtx());
       
-      SwingCoreCtx scc = slc.getSwingCtx().getSwingCoreCtx();
+      SwingCoreCtx scc = slc.getSwingCtx();
       dsc = new CoreDrawSwingCtx(scc, boc);
       dc = new DrwCtx(dsc, slc);
 

@@ -129,8 +129,8 @@ public class RunSwingDrawerLayouter extends RunSwingDrawerAbstract {
       hello.setName("hello");
       hello.setSizer(sizerW, sizer30);
       hello.setPozer(pozerFac.getPozerEndToEnd(), pozerFac.getPozerTopToTop());
-      int face = ITechFont.FACE_MONOSPACE;
-      int style = ITechFont.STYLE_BOLD;
+      int face = ITechFont.FACE_01_MONOSPACE;
+      int style = ITechFont.STYLE_1_BOLD;
       int size = ITechFont.SIZE_3_MEDIUM;
       ByteObject figHello = dc.getFigureFactory().getFigString("Hello!", face, style, size, color1);
       hello.setFigure(figHello);
