@@ -60,7 +60,7 @@ public abstract class JComponentDrawXAbstract extends JComponentLayoutable {
 
    public void paint(IGraphics g) {
       // Setup the graphics object as per the spec.
-      g.translate(-g.getTranslateX(), -g.getTranslateY());
+      g.setTranslate(-g.getTranslateX(), -g.getTranslateY());
       g.setClip(0, 0, getWidth(), getHeight());
       g.setColor(0xff000000); // black
       g.setFont(ssd.getCoreDrawCtx().getFontFactory().getDefaultFont());

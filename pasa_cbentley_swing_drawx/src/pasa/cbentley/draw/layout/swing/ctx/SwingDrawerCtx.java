@@ -7,7 +7,7 @@ import pasa.cbentley.framework.coredraw.src4.ctx.CoreDrawCtx;
 import pasa.cbentley.framework.drawx.src4.ctx.DrwCtx;
 import pasa.cbentley.framework.drawx.src4.engine.GraphicsX;
 import pasa.cbentley.layouter.src4.ctx.LayouterCtx;
-import pasa.cbentley.layouter.swing.ctx.SwingLayouterCtx;
+import pasa.cbentley.layouter.swing.ctx.LayouterSwingCtx;
 
 /**
  * Library for drawing figures from {@link DrwCtx} on a {@link GraphicsX} using the {@link LayouterCtx} swing adapter.
@@ -23,16 +23,16 @@ public class SwingDrawerCtx extends ACtx {
 
    protected final CoreDrawSwingCtx dsc;
 
-   protected final SwingLayouterCtx slc;
+   protected final LayouterSwingCtx slc;
 
-   public SwingDrawerCtx(DrwCtx drc, CoreDrawSwingCtx dsc, SwingLayouterCtx slc) {
+   public SwingDrawerCtx(DrwCtx drc, CoreDrawSwingCtx dsc, LayouterSwingCtx slc) {
       super(drc.getUC());
       this.drc = drc;
       this.dsc = dsc;
       this.slc = slc;
    }
 
-   public SwingLayouterCtx getSwingLayouterCtx() {
+   public LayouterSwingCtx getSwingLayouterCtx() {
       return slc;
    }
 
@@ -40,7 +40,7 @@ public class SwingDrawerCtx extends ACtx {
       return drc;
    }
 
-   public SwingLayouterCtx getSLC() {
+   public LayouterSwingCtx getSLC() {
       return slc;
    }
 
